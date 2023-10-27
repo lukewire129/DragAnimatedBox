@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlideScrollBox", "SlideScrollBox\SlideScrollBox.csproj", "{28877355-3A4A-49C2-BFD1-46C7B0DCE10A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlideScrollBox.Example", "SlideScrollBox.Example\SlideScrollBox.Example.csproj", "{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28877355-3A4A-49C2-BFD1-46C7B0DCE10A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28877355-3A4A-49C2-BFD1-46C7B0DCE10A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28877355-3A4A-49C2-BFD1-46C7B0DCE10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28877355-3A4A-49C2-BFD1-46C7B0DCE10A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {289DD4F7-72CF-42F8-8DE5-8B2905D593E7}
+	EndGlobalSection
+EndGlobal
