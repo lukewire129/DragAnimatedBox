@@ -1,46 +1,41 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace SlideScrollBox.Controls
 {
-    public class DragAnimatePanelCore :Panel
+    public partial class DragAnimatedPanel
     {
-        static DragAnimatePanelCore()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata (typeof (DragAnimatePanelCore), new FrameworkPropertyMetadata (typeof (DragAnimatePanelCore)));
-        }
         #region dependency properties		
         public static readonly DependencyProperty ItemsWidthProperty =
           DependencyProperty.Register (
                   "ItemsWidth",
                   typeof (double),
-                  typeof (DragAnimatePanelCore),
+                  typeof (DragAnimatedPanel),
                   new FrameworkPropertyMetadata (150d));
 
         public static readonly DependencyProperty ItemsHeightProperty =
           DependencyProperty.Register (
                   "ItemsHeight",
                   typeof (double),
-                  typeof (DragAnimatePanelCore),
+                  typeof (DragAnimatedPanel),
                   new FrameworkPropertyMetadata (60d));
 
         public static readonly DependencyProperty ItemSeparationProperty =
          DependencyProperty.Register (
                  "ItemSeparation",
                  typeof (Thickness),
-                 typeof (DragAnimatePanelCore),
+                 typeof (DragAnimatedPanel),
                  new FrameworkPropertyMetadata ());
 
         // Using a DependencyProperty as the backing store for AnimationMilliseconds.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty AnimationMillisecondsProperty =
-            DependencyProperty.Register ("AnimationMilliseconds", typeof (int), typeof (DragAnimatePanelCore), new FrameworkPropertyMetadata (200));
+            DependencyProperty.Register ("AnimationMilliseconds", typeof (int), typeof (DragAnimatedPanel), new FrameworkPropertyMetadata (200));
 
         public static readonly DependencyProperty SwapCommandProperty =
           DependencyProperty.Register (
                   "SwapCommand",
                   typeof (ICommand),
-                  typeof (DragAnimatePanelCore),
+                  typeof (DragAnimatedPanel),
                   new FrameworkPropertyMetadata (null));
 
         #endregion

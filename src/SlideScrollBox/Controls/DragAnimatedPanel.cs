@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace SlideScrollBox.Controls
 {
-    public partial class DragAnimatedPanel : DragAnimatePanelCore
+    public partial class DragAnimatedPanel : Panel
     {
         #region private vars
         Size _calculatedSize;
@@ -63,7 +64,7 @@ namespace SlideScrollBox.Controls
                 }
                 //drag will locate dragged element
                 colPosition += itemContainterWidth;
-                if (colPosition + 1 > _calculatedSize.Width)
+                if (colPosition +1 > _calculatedSize.Width)
                 {
                     colPosition = 0;
                     rowPosition += itemContainterHeight - 2;

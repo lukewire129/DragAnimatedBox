@@ -16,7 +16,7 @@
                 <ItemsPanelTemplate>
                     <controls:DragAnimatedPanel
                         ItemSeparation="2"
-                        ItemsHeight="140"
+                        ItemsHeight="300"
                         ItemsWidth="220"
                         SwapCommand="{Binding SwapCommand}" />
                 </ItemsPanelTemplate>

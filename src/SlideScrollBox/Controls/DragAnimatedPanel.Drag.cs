@@ -198,6 +198,5 @@ namespace SlideScrollBox.Controls
                     }
                 }
             }
-
     } 
 }
