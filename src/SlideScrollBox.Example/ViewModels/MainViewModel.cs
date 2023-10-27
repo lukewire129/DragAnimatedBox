@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using SlideScrollBox.Event;
 using SlideScrollBox.Example.Model;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace SlideScrollBox.Example.ViewModels
