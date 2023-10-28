@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SlideScrollBox\SlideScrollBox.csproj" />
+    <ProjectReference Include="..\DragAnimatedBox\DragAnimatedBox.csproj" />
   </ItemGroup>
 
 </Project>

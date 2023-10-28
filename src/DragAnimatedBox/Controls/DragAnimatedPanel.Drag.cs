@@ -1,11 +1,10 @@
-﻿using System.Windows.Controls;
+﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
-using System;
 using System.Windows.Media;
-using System.Diagnostics;
 
-namespace SlideScrollBox.Controls
+namespace DragAnimatedBox.Controls
 {
     public partial class DragAnimatedPanel
     {
@@ -73,9 +72,6 @@ namespace SlideScrollBox.Controls
             _x = p.X;
             _y = p.Y;
             SetZIndex (_draggedElement, 1000);
-            Debug.WriteLine ($"X1: {mousePos.X}");
-            Debug.WriteLine ($"Y2: {mousePos.X}");
-
             _lastMousePosX = mousePos.X;
             _lastMousePosY = mousePos.Y;
             _lastMouseMoveTime = e.Timestamp;
@@ -105,8 +101,6 @@ namespace SlideScrollBox.Controls
         void OnDragOver(MouseEventArgs e)
         {
             Point mousePos = e.GetPosition (this);
-            Debug.WriteLine ($"X3: {mousePos.X}");
-            Debug.WriteLine ($"Y4: {mousePos.Y}");
             double difX = mousePos.X - _lastMousePosX;
             double difY = mousePos.Y - _lastMousePosY;
 

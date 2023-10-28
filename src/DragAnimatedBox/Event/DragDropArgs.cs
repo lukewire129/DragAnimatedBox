@@ -1,4 +1,4 @@
-﻿namespace SlideScrollBox.Event
+﻿namespace DragAnimatedBox.Event
 {
     public class DragDropArgs<T1, T2>
     {

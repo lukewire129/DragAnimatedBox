@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace SlideScrollBox.Controls
+namespace DragAnimatedBox.Controls
 {
     public partial class DragAnimatedPanel
     {

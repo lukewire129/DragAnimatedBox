@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
-namespace SlideScrollBox.Example.Model
+﻿namespace DragAnimatedBox.Example.Model
 {
     public class ItemModel
     {       

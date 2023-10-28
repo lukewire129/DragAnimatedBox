@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using SlideScrollBox.Example.Model;
+using DragAnimatedBox.Example.Model;
 using System.Collections.ObjectModel;
 
-namespace SlideScrollBox.Example.ViewModels
+namespace DragAnimatedBox.Example.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {

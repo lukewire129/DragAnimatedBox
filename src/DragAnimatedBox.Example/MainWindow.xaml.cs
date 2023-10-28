@@ -1,7 +1,7 @@
-﻿using SlideScrollBox.Example.ViewModels;
+﻿using DragAnimatedBox.Example.ViewModels;
 using System.Windows;
 
-namespace SlideScrollBox.Example
+namespace DragAnimatedBox.Example
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

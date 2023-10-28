@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DragAnimatedBox;component/Themes/Controls/DragAnimateListBoxItem.xaml" />
+        <ResourceDictionary Source="/DragAnimatedBox;component/Themes/Controls/DragAnimateListBox.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
