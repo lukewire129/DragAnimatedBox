@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DragAnimatedBox.Event;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -62,7 +63,7 @@ namespace DragAnimatedBox.Controls
         }
         void StartDrag(MouseEventArgs e)
         {
-            Point mousePos = e.GetPosition(this);
+            Point mousePos = e.GetPosition (this);
             _draggedElement = GetChildThatHasMouseOver ();
             if (_draggedElement == null)
                 return;
@@ -132,65 +133,67 @@ namespace DragAnimatedBox.Controls
             }
         }
 
-            void SwapElement(double x, double y)
+        void SwapElement(double x, double y)
+        {
+            int index = GetIndexFromPoint (x, y);
+            if (index == _draggedIndex || index < 0)
+                return;
+            if (index >= Children.Count)
+                index = Children.Count - 1;
+
+            var args = new DragDropArgs<int, int> ();
+            args.DropItem = index;
+            args.TargetItem = _draggedIndex;
+            if (SwapCommand != null && SwapCommand.CanExecute (args))
             {
-                int index = GetIndexFromPoint (x, y);
-                if (index == _draggedIndex || index < 0)
-                    return;
-                if (index >= Children.Count)
-                    index = Children.Count - 1;
-
-                int[] parameter = new int[] { _draggedIndex, index };
-                if (SwapCommand != null && SwapCommand.CanExecute (parameter))
-                {
-                    SwapCommand.Execute (parameter);
-                    _draggedElement = Children[index];              //this is bcause after changing the collection the element is other			
-                    FillNewDraggedChild (_draggedElement);
-                    _draggedIndex = index;
-                }
-
-                this.InvalidateArrange ();
+                SwapCommand.Execute (args);
+                _draggedElement = Children[index];              //this is bcause after changing the collection the element is other			
+                FillNewDraggedChild (_draggedElement);
+                _draggedIndex = index;
             }
 
-            void FillNewDraggedChild(UIElement child)
-            {
-                if (child.RenderTransform as TransformGroup == null)
-                {
-                    child.RenderTransformOrigin = new Point (0.5, 0.5);
-                    TransformGroup group = new TransformGroup ();
-                    child.RenderTransform = group;
-                    group.Children.Add (new TranslateTransform ());
-                }
-                SetZIndex (child, 1000);
-                AnimateTo (child, _x, _y, 0);           //need relocate the element
-            }
+            this.InvalidateArrange ();
+        }
 
-            void DoScroll()
+        void FillNewDraggedChild(UIElement child)
+        {
+            if (child.RenderTransform as TransformGroup == null)
             {
-                if (scrollViewer != null)
-                {
-                    Point position = Mouse.GetPosition (scrollViewer);
-                    double scrollMargin = Math.Min (scrollViewer.FontSize * 2, scrollViewer.ActualHeight / 2);
+                child.RenderTransformOrigin = new Point (0.5, 0.5);
+                TransformGroup group = new TransformGroup ();
+                child.RenderTransform = group;
+                group.Children.Add (new TranslateTransform ());
+            }
+            SetZIndex (child, 1000);
+            AnimateTo (child, _x, _y, 0);           //need relocate the element
+        }
 
-                    if (position.X >= scrollViewer.ActualWidth - scrollMargin &&
-                        scrollViewer.HorizontalOffset < scrollViewer.ExtentWidth - scrollViewer.ViewportWidth)
-                    {
-                        scrollViewer.LineRight ();
-                    }
-                    else if (position.X < scrollMargin && scrollViewer.HorizontalOffset > 0)
-                    {
-                        scrollViewer.LineLeft ();
-                    }
-                    else if (position.Y >= scrollViewer.ActualHeight - scrollMargin &&
-                        scrollViewer.VerticalOffset < scrollViewer.ExtentHeight - scrollViewer.ViewportHeight)
-                    {
-                        scrollViewer.LineDown ();
-                    }
-                    else if (position.Y < scrollMargin && scrollViewer.VerticalOffset > 0)
-                    {
-                        scrollViewer.LineUp ();
-                    }
+        void DoScroll()
+        {
+            if (scrollViewer != null)
+            {
+                Point position = Mouse.GetPosition (scrollViewer);
+                double scrollMargin = Math.Min (scrollViewer.FontSize * 2, scrollViewer.ActualHeight / 2);
+
+                if (position.X >= scrollViewer.ActualWidth - scrollMargin &&
+                    scrollViewer.HorizontalOffset < scrollViewer.ExtentWidth - scrollViewer.ViewportWidth)
+                {
+                    scrollViewer.LineRight ();
+                }
+                else if (position.X < scrollMargin && scrollViewer.HorizontalOffset > 0)
+                {
+                    scrollViewer.LineLeft ();
+                }
+                else if (position.Y >= scrollViewer.ActualHeight - scrollMargin &&
+                    scrollViewer.VerticalOffset < scrollViewer.ExtentHeight - scrollViewer.ViewportHeight)
+                {
+                    scrollViewer.LineDown ();
+                }
+                else if (position.Y < scrollMargin && scrollViewer.VerticalOffset > 0)
+                {
+                    scrollViewer.LineUp ();
                 }
             }
-    } 
+        }
+    }
 }

@@ -1,28 +1,28 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using DragAnimatedBox.Example.Model;
+using DragAnimatedBox.Event;
 using System.Collections.ObjectModel;
 
 namespace DragAnimatedBox.Example.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
-        [ObservableProperty] ObservableCollection<ItemModel> testData;
+        [ObservableProperty] ObservableCollection<string> testData;
 
         public MainViewModel()
         {
             this.TestData = new ();
-            TestData.Add (new ItemModel("Item1"));
-            TestData.Add (new ItemModel("Item2"));
-            TestData.Add (new ItemModel("Item3"));
-            TestData.Add (new ItemModel("Item4"));
-            TestData.Add (new ItemModel("Item5"));
+            TestData.Add ("Item1");
+            TestData.Add ("Item2");
+            TestData.Add ("Item3");
+            TestData.Add ("Item4");
+            TestData.Add ("Item5");
         }
 
         [RelayCommand]
-        private void Swap(int[] indexes)
+        private void Swap(DragDropArgs<int, int> obj)
         {
-            testData.Move (indexes[0], indexes[1]);
+            testData.Move (obj.TargetItem, obj.DropItem);
         }
     }
 }

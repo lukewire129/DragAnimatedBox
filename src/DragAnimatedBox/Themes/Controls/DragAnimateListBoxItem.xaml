@@ -18,7 +18,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="20"
                                 Foreground="White"
-                                Text="{Binding ItemName}" />
+                                Text="{Binding}" />
                             <james:JamesIcon
                                 x:Name="PART_MoveGrip"
                                 HorizontalAlignment="Right"
