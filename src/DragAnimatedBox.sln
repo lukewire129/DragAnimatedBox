@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragAnimatedBox", "DragAnim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragAnimatedBox.Example", "DragAnimatedBox.Example\DragAnimatedBox.Example.csproj", "{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAnimatedBox.Example2", "DragAnimatedBox.Example2\DragAnimatedBox.Example2.csproj", "{685AAAE7-BF5D-431A-BE3B-88DA9078EBEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C5E6C0D-98D3-4B8E-8DC0-99D1B2428853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685AAAE7-BF5D-431A-BE3B-88DA9078EBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685AAAE7-BF5D-431A-BE3B-88DA9078EBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685AAAE7-BF5D-431A-BE3B-88DA9078EBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685AAAE7-BF5D-431A-BE3B-88DA9078EBEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
