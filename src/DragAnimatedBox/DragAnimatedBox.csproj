@@ -1,9 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net461;net47;net48;net6.0-windows;net7.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
+    <Version>1.0.0.0</Version>
+    <Authors>lukewire</Authors>
+    <Product>lukewire</Product>
+    <Copyright>lukewire</Copyright>
+    <PackageProjectUrl>https://github.com/lukewire129/DragAnimatedBox</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lukewire129/DragAnimatedBox</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>lukewire,wpf</PackageTags>
+    <Description>Wpf Support</Description>
   </PropertyGroup>
 
   <ItemGroup>
